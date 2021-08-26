@@ -33,3 +33,5 @@ Suggests:
     rmarkdown,
     knitr
 VignetteBuilder: knitr
+URL: https://github.com/d-morrison/Altamed
+BugReports: https://github.com/d-morrison/Altamed/issues

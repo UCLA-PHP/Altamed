@@ -1,0 +1,57 @@
+---
+title: "load-data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{load-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+rm(list = ls())
+library(readr)
+library(fs)
+library(dplyr)
+library(magrittr)
+library(useful)
+data_folder_path = "/Users/dmorrison/Documents/Directory/Work/Projects/By_PI/Inkelas/Altamed/Data"
+data1 = read_csv(path(data_folder_path, "LAC_Vaccine_City_Data.csv"), 
+                 na = c("", "NA", "Unreliable Data"),
+                 col_types = 
+                   cols(
+                     `Date (Dose 1)` = col_date(format = "%m/%d/%Y")
+                     # `Cumulative 65+ (Dose 1)` = parse_number(na = "Unreliable Data")
+                     # `Cumulative Percentage 65+ (Dose 1)` = col_number()
+                   ))
+
+data1 %<>% mutate(
+  pct65 = `Cumulative 65+ (Dose 1)`/`Population (65+)` * 100,
+  `pct16+` = `Cumulative 16+ (Dose 1)` / `Population (16+)` * 100,
+  `Cumulative 16-64 (Dose 1)` = `Cumulative 16+ (Dose 1)` - `Cumulative 65+ (Dose 1)`,
+  `Population (16-64)` = `Population (16+)` - `Population (65+)`,
+  `pct16-64` = `Cumulative 16-64 (Dose 1)` / `Population (16-64)` * 100,
+  `% vaccinated 12-27` = `Cumulative 12-17 (Dose 1)` / `Population (12-17)` * 100
+  
+)
+
+# saveRDS(data1, file = "Code/Shiny/data/data1.Rds")
+library(Altamed)
+current_community = "City of Bell"
+
+plot_community_vaccination_rates(
+  community_name = "City of Bell")
+
+plot_community_vaccination_rates(
+  community_name = "City of El Monte")
+
+plot_community_vaccination_rates(
+  community_name = "City of Monterey Park")
+
+```

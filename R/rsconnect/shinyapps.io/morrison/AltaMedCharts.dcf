@@ -1,0 +1,13 @@
+name: AltaMedCharts
+title: AltaMedCharts
+username:
+account: morrison
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4437518
+bundleId: 4869497
+url: https://morrison.shinyapps.io/AltaMedCharts/
+when: 1627584514.04867
+lastSyncTime: 1627584514.04867
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,35 @@
+Package: Altamed
+Title: Provides a dashboard for COVID19 data for the Altamed group
+Version: 0.0.0.91
+Authors@R: 
+    person(given = "Douglas",
+           family = "Morrison",
+           role = c("aut", "cre"),
+           email = "d.ezra.morrison@gmail.com",
+           comment = c(ORCID = "0000-0002-7195-830X"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+    pkgload,
+    shiny,
+    tidyverse,
+    scales,
+    gridExtra,
+    plotly,
+    dplyr,
+    magrittr,
+    ggplot2,
+    lubridate,
+    RColorBrewer,
+    useful,
+    shinydashboard
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

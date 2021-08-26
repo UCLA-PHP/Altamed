@@ -1,0 +1,14 @@
+name: AltaMedCharts
+title: AltaMedCharts
+username:
+account: morrison
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4437518
+bundleId: 4870389
+url: https://morrison.shinyapps.io/AltaMedCharts/
+when: 1627606210.30973
+lastSyncTime: 1627606210.30973
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/LAC_Vaccine_City_Data.csv|misc/20200903_Student_Counts_by_Zip.xlsx|misc/COVID-19 data display templates for learning v1.pptx|misc/DPH CSAs by LA Unified CoS and schools - Crosswalk (4-9-2021 vacc).xlsx|misc/DPH CSAs by LA Unified CoS and schools.xlsx|misc/LAC_Vaccine_City_Data - SPC charts Altamed 7-25-2021.xlsx

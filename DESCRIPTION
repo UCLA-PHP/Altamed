@@ -25,7 +25,9 @@ Imports:
     lubridate,
     RColorBrewer,
     useful,
-    shinydashboard
+    shinydashboard,
+    fs,
+    readr
 Depends: 
     R (>= 2.10)
 LazyData: true

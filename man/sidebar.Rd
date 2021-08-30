@@ -7,7 +7,7 @@
 sidebar()
 }
 \value{
-
+a sidebar
 }
 \description{
 Title

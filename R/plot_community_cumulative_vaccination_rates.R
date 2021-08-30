@@ -11,7 +11,8 @@
 #'
 plot_community_vaccination_rates = function(
   community_name,
-  current_community_data = data1 %>% 
+  dataset,
+  current_community_data = dataset %>% 
     filter(Community == community_name) %>%
     arrange(`Date (Dose 1)`)
   
@@ -45,14 +46,14 @@ plot_community_vaccination_rates = function(
     plotly::add_trace(
       type = "scatter",
       mode = "lines+Markers",
-      name = "16-64",
-      y = useful::build.formula(lhs = NULL, rhs = "pct16-64")
+      name = "18-64",
+      y = useful::build.formula(lhs = NULL, rhs = "pct18-64")
     ) %>% 
     plotly::add_trace(
       type = "scatter",
       mode = "lines+Markers",
       name = "12-17",
-      y = useful::build.formula(lhs = NULL, rhs = "% vaccinated 12-27")
+      y = useful::build.formula(lhs = NULL, rhs = "% vaccinated 12-17")
     ) %>% 
     plotly::layout(
       legend = legendstats,

@@ -6,7 +6,8 @@
 \usage{
 plot_community_vaccination_rates(
   community_name,
-  current_community_data = data1 \%>\% filter(Community == community_name) \%>\%
+  dataset,
+  current_community_data = dataset \%>\% filter(Community == community_name) \%>\%
     arrange(`Date (Dose 1)`)
 )
 }

@@ -1,35 +1,30 @@
 
 server <- function(input, output, session) 
 {
-  cities = 
-    paste(
-      "City of",
-      c("Bell", "El Monte", "Monterey Park", "South Gate",
-        "Bell Gardens", "Huntington Park", "Paramount", "Whittier",
-        "Commerce", "Lynwood", "Pico Rivera",
-        "Compton", "Maywood", "Rosemead",
-        "Cudahy", "Montebello", "South El Monte"))
   
-  neighborhoods = paste(
-    "Los Angeles -", 
-    c(
-      "Florence-Firestone",
-      "Boyle Heights"
-      
-    )
-  )
-  
-  unincorporated = "Unincorporated - East Los Angeles"
-  
-  communities = c(cities, neighborhoods, unincorporated)
+  communities = get_communities_list()
   
   lapply(
     X = communities,
     function(i)
     {
-      output[[i]] = 
+      output[[paste("cumulative", i)]] = 
         plotly::renderPlotly(
           plot_community_vaccination_rates(
+            data = data1,
+            community_name = i))
+      
+    }
+  )
+  
+  lapply(
+    X = communities,
+    function(i)
+    {
+      output[[paste("run", i)]] = 
+        plotly::renderPlotly(
+          run_chart(
+            data = data1,
             community_name = i))
       
     }

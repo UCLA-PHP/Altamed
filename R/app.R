@@ -6,6 +6,8 @@
 #' @export
 #'
 
+# library("Altamed")
+
 cuvaxApp <- function(...) {
   shinyApp(ui, server, ...)
 }

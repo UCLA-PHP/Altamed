@@ -65,7 +65,7 @@ run_chart = function(
   fig = plotly::subplot(plot1, plot2, plot3, nrows = 3, shareX  = TRUE) %>%
     plotly::layout(
       legend = legendstats,
-      title = paste("Number of", community_name, "residents receiving Dose 1, each day, by age group"),
+      title = paste("Number of", community_name, "residents receiving Dose 1 each day"),
       yaxis = list(
         # range = c(0,100),
         # rangemode

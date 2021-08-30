@@ -89,13 +89,26 @@ cumulative_vax_rates = function(width1 = 3)
   )
 }
 
-run_charts = function(width1 = 10)
+run_charts = function()
 {
   shinydashboard::tabItem(
     tabName = "run_charts",
     h2("Counts of New Vaccinations (Dose 1)"),
-    selectInput("run_chart_location", label = "Area", choices = get_communities_list()),
-    shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "run_charts"))
+    
+    
+    shinydashboard::box(width = 6, 
+                        selectInput(
+                          "run_chart_location", 
+                          label = NULL,
+                          choices = get_communities_list()),
+                        plotly::plotlyOutput(outputId = "run_charts")),
+    shinydashboard::box(width = 6, 
+                        selectInput(
+                          "run_chart_location2", 
+                          label = NULL,
+                          choices = get_communities_list(), 
+                          selected = get_communities_list()[2]),
+                        plotly::plotlyOutput(outputId = "run_charts2"))
     
   )
 }

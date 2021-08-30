@@ -21,6 +21,11 @@ server <- function(input, output, session)
     run_chart(
       data = data1,
       community_name = input$run_chart_location))
+  
+  output$run_charts2 = plotly::renderPlotly(
+    run_chart(
+      data = data1,
+      community_name = input$run_chart_location2))
     
   
 

@@ -17,17 +17,11 @@ server <- function(input, output, session)
     }
   )
   
-  lapply(
-    X = communities,
-    function(i)
-    {
-      output[[paste("run", i)]] = 
-        plotly::renderPlotly(
-          run_chart(
-            data = data1,
-            community_name = i))
-      
-    }
-  )
+  output$run_charts = plotly::renderPlotly(
+    run_chart(
+      data = data1,
+      community_name = input$run_chart_location))
+    
+  
 
 }

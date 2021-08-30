@@ -89,19 +89,13 @@ cumulative_vax_rates = function(width1 = 3)
   )
 }
 
-run_charts = function(width1 = 8)
+run_charts = function(width1 = 10)
 {
   shinydashboard::tabItem(
     tabName = "run_charts",
     h2("Counts of New Vaccinations (Dose 1)"),
-    selectInput("location", label = "Area", choices = get_communities_list()),
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "run City of Bell"))),
+    selectInput("run_chart_location", label = "Area", choices = get_communities_list()),
+    shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "run_charts"))
     
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "run City of Whittier"))),
-    
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "run Los Angeles - Boyle Heights")))
   )
 }

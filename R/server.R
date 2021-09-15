@@ -28,24 +28,23 @@ server <- function(input, output, session)
       community_name = input$run_chart_location2))
     
   
+  case_data =  hybrid.charts.la::load_and_format_CSA_case_data()
   
   output$case_chart1 = plotly::renderPlotly(
-    hybrid_charts[[
-      # "adjusted"
-      ifelse(input$adjust_case_chart1, "adjusted", "raw")
-      ]][[
-      input$case_chart_loc1
-        # "Bell"
-    ]])
+    hybrid.charts.la::build_hybrid_chart(
+      data = case_data,
+      adjust = input$adjust_case_chart1,
+      community = input$case_chart_loc1)
+    
+    )
   
   output$case_chart2 = plotly::renderPlotly(
-    hybrid_charts[[
-      # "adjusted"
-      ifelse(input$adjust_case_chart2, "adjusted", "raw")
-      ]][[
-      input$case_chart_loc2
-        # "El Monte"
-    ]])
+    hybrid.charts.la::build_hybrid_chart(
+      data = case_data,
+      adjust = input$adjust_case_chart2,
+      community = input$case_chart_loc2)
+    
+  )
   
 
 }

@@ -5,7 +5,7 @@ account: morrison
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4437518
-bundleId: 5034132
+bundleId: 5034668
 url: https://morrison.shinyapps.io/AltaMedCharts/
-when: 1631668798.37874
-lastSyncTime: 1631668798.37874
+when: 1631685999.953
+lastSyncTime: 1631685999.953

@@ -13,7 +13,7 @@
 
 load_data = function(
   data_folder_path = fs::path(
-    "/Users/dmorrison/Documents/Directory/Work/Projects/By_PI/Inkelas/Altamed/misc",
+    "inst/extdata",
     "LAC_Vaccine_City_Data.csv")
 )
 {
@@ -22,7 +22,7 @@ load_data = function(
                    na = c("", "NA", "Unreliable Data"),
                    col_types = 
                      readr::cols(
-                       `Date (Dose 1)` = readr::col_date(format = "%m/%d/%Y")
+                       `Date (Dose 1)` = readr::col_date(format = "%m/%d/%y")
                        # `Cumulative 65+ (Dose 1)` = parse_number(na = "Unreliable Data")
                        # `Cumulative Percentage 65+ (Dose 1)` = col_number()
                      ))

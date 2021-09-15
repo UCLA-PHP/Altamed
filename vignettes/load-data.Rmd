@@ -22,9 +22,6 @@ data1 = load_data()
 
 # use_data(data1)
 
-
-
-
 plot_community_vaccination_rates(
   dataset = data1,
   community_name = "City of Bell")

@@ -3,3 +3,4 @@
 ^app\.R$
 ^rsconnect$
 ^misc\.*$
+^data-raw$

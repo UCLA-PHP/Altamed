@@ -5,9 +5,7 @@
 \title{Reformat data}
 \usage{
 load_data(
- 
-    data_folder_path = fs::path("/Users/dmorrison/Documents/Directory/Work/Projects/By_PI/Inkelas/Altamed/misc",
-    "LAC_Vaccine_City_Data.csv")
+  data_folder_path = fs::path("inst/extdata", "LAC_Vaccine_City_Data.csv")
 )
 }
 \arguments{

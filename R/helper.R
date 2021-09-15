@@ -9,8 +9,10 @@ sidebar = function()
   shinydashboard::dashboardSidebar(
     shinydashboard::sidebarMenu(
       id = "tabs",
-      shinydashboard::menuItem("Cumulative Charts", tabName = "cumulative"),
-      shinydashboard::menuItem("Run Charts", tabName = "run_charts")
+      shinydashboard::menuItem("Cumulative Charts: Vaccination", tabName = "cumulative"),
+      shinydashboard::menuItem("Run Charts: Vaccination", tabName = "run_charts"),
+      shinydashboard::menuItem("Run Charts: Cases", tabName = "hybrid_charts_cases")
+      
       # menuItem("Graphs", tabName = "graphs")#,
       #menuItem("Documentation", tabName = "documentation")
     )
@@ -33,7 +35,8 @@ body = function(width1 = 3)
     shiny::tags$head(tags$style(HTML(".shiny-notification {position: fixed; top: 15% ;left: 1%;"))),
     shinydashboard::tabItems(
       cumulative_vax_rates(width1 = width1),
-      run_charts()
+      run_charts(),
+      cases_hybrid_charts_tab()
       #,
       # 
       #  tabItem(
@@ -45,49 +48,7 @@ body = function(width1 = 3)
   
 }
 
-#' Title
-#'
-#' @param width1 
-#'
-#' @return
-#'
 
-cumulative_vax_rates = function(width1 = 3)
-{
-  shinydashboard::tabItem(
-    tabName = "cumulative",
-    h2("Cumulative Vaccination Rates"),
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Bell")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of El Monte")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Monterey Park")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of South Gate"))),
-    
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Bell Gardens")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Huntington Park")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Paramount")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Whittier"))),
-    
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Commerce")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Lynwood")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Pico Rivera")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative Los Angeles - Boyle Heights"))),
-    
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Maywood")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Compton")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Rosemead")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative Los Angeles - Florence-Firestone"))),
-    
-    fluidRow(
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Cudahy")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of Montebello")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative City of South El Monte")),
-      shinydashboard::box(width = width1, plotly::plotlyOutput(outputId = "cumulative Unincorporated - East Los Angeles")))
-  )
-}
 
 run_charts = function()
 {

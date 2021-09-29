@@ -40,5 +40,5 @@ VignetteBuilder: knitr
 URL: https://github.com/d-morrison/Altamed
 BugReports: https://github.com/d-morrison/Altamed/issues
 Remotes:  
-    github::dmorrison01/hybrid.charts.la
+    github::dmorrison01/hybrid.charts.la,
     github::d-morrison/LA.Vax.Data

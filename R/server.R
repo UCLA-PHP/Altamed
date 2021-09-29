@@ -11,7 +11,7 @@ server <- function(input, output, session)
       output[[paste("cumulative", i)]] = 
         plotly::renderPlotly(
           plot_community_vaccination_rates(
-            data = vax_by_CSA,
+            data = LA.Vax.Data::la.vax,
             community_name = i))
       
     }
@@ -19,12 +19,12 @@ server <- function(input, output, session)
   
   output$run_charts = plotly::renderPlotly(
     run_chart(
-      data = vax_by_CSA,
+      data = LA.Vax.Data::la.vax,
       community_name = input$run_chart_location))
   
   output$run_charts2 = plotly::renderPlotly(
     run_chart(
-      data = vax_by_CSA,
+      data = LA.Vax.Data::la.vax,
       community_name = input$run_chart_location2))
     
   

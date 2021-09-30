@@ -32,27 +32,32 @@ plot_community_vaccination_rates = function(
       color = "#000")
   )
   
+  size1 = 4
   
   plot1 = plotly::plot_ly(
     current_community_data,
     x = ~`Date (Dose 1)`
+    # marker = list(size = 8)
   ) %>% 
     plotly::add_trace(
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
       name = "65+",
+      marker = list(size = size1),
       y = useful::build.formula(lhs = NULL, rhs = "pct65")
     ) %>%
     plotly::add_trace(
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
       name = "18-64",
+      marker = list(size = size1),
       y = useful::build.formula(lhs = NULL, rhs = "pct18-64")
     ) %>% 
     plotly::add_trace(
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
       name = "12-17",
+      marker = list(size = size1),
       y = useful::build.formula(lhs = NULL, rhs = "% vaccinated 12-17")
     ) %>% 
     plotly::layout(

@@ -32,13 +32,15 @@ run_chart = function(
       color = "#000")
   )
   
+  size1 = 4
   
   plot1 = plotly::plot_ly(
       current_community_data,
       x = ~`Date (Dose 1)`,
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
       name = "65+",
+      marker = list(size = size1),
       y = useful::build.formula(lhs = NULL, rhs = "new vax 65+")
     )
   
@@ -47,7 +49,8 @@ run_chart = function(
       current_community_data,
       x = ~`Date (Dose 1)`,
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
+      marker = list(size = size1),
       name = "18-64",
       y = useful::build.formula(lhs = NULL, rhs = "new vax 18-64")
     )
@@ -56,7 +59,8 @@ run_chart = function(
       current_community_data,
       x = ~`Date (Dose 1)`,
       type = "scatter",
-      mode = "lines+Markers",
+      mode = "lines+markers",
+      marker = list(size = size1),
       name = "12-17",
       y = useful::build.formula(lhs = NULL, rhs = "new vax 12-17")
     )

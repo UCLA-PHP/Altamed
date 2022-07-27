@@ -1,14 +1,14 @@
 funnel_chart = function(
   dataset,
   age_group = "16-64",
-  date = max(dataset$`Date (Dose 1)`)
+  date = max(dataset$`Date`)
   )
 {
   
-  X_name = paste("Cumulative", age_group, "(Dose 1)")
+  X_name = paste("Cumulative", age_group, "(Dose 1+)")
   N_name = paste("Population (", age_group, ")", sep = "")
   
-  dataset %<>% filter(`Date (Dose 1)` == date)
+  dataset %<>% filter(`Date` == date)
   
   X = dataset[[X_name]]
   N = dataset[[N_name]]

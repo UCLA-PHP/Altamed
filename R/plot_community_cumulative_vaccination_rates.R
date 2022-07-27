@@ -14,7 +14,7 @@ plot_community_vaccination_rates = function(
   dataset,
   current_community_data = dataset %>% 
     filter(Community == community_name) %>%
-    arrange(`Date (Dose 1)`)
+    arrange(`Date`)
   
 )
 {
@@ -36,7 +36,7 @@ plot_community_vaccination_rates = function(
   
   plot1 = plotly::plot_ly(
     current_community_data,
-    x = ~`Date (Dose 1)`
+    x = ~`Date`
     # marker = list(size = 8)
   ) %>% 
     plotly::add_trace(
@@ -65,7 +65,7 @@ plot_community_vaccination_rates = function(
       title = community_name,
       yaxis = list(
         range = c(0,100),
-        title = "% vaccinated (dose 1)"
+        title = "% vaccinated (Dose 1+)"
       ),
       xaxis = list(
         title = ""

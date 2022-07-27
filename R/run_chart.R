@@ -14,7 +14,7 @@ run_chart = function(
   dataset,
   current_community_data = dataset %>% 
     filter(Community == community_name) %>%
-    arrange(`Date (Dose 1)`)
+    arrange(`Date`)
   
 )
 {
@@ -36,7 +36,7 @@ run_chart = function(
   
   plot1 = plotly::plot_ly(
       current_community_data,
-      x = ~`Date (Dose 1)`,
+      x = ~`Date`,
       type = "scatter",
       mode = "lines+markers",
       name = "65+",
@@ -47,7 +47,7 @@ run_chart = function(
   plot2 = 
     plotly::plot_ly(
       current_community_data,
-      x = ~`Date (Dose 1)`,
+      x = ~`Date`,
       type = "scatter",
       mode = "lines+markers",
       marker = list(size = size1),
@@ -57,7 +57,7 @@ run_chart = function(
   plot3 = 
     plotly::plot_ly(
       current_community_data,
-      x = ~`Date (Dose 1)`,
+      x = ~`Date`,
       type = "scatter",
       mode = "lines+markers",
       marker = list(size = size1),
